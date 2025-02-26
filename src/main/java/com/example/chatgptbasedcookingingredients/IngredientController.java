@@ -23,7 +23,7 @@ public class IngredientController {
     }
 
     @PostMapping
-    String categorizeIngredient(@RequestBody String ingredient) {
+    public String categorizeIngredient(@RequestBody String ingredient) {
         ChatGPTResponse response = restClient.post()
                 .body(new ChatGPTRequest("Is " + ingredient + " vegan, vegetarian or regular?"))
                 .retrieve()
